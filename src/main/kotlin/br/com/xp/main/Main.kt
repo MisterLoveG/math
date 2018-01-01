@@ -2,7 +2,7 @@ package br.com.xp.main
 
 import br.com.xp.operation.DivisionOperation.Companion.divisionValue
 import br.com.xp.operation.MultiplerOperation.Companion.multiplerValue
-import br.com.xp.operation.NumberValue.Companion.valueFrom
+import br.com.xp.operation.NumberValuable.Companion.valueFrom
 import br.com.xp.operation.SumOperation.Companion.sumValueFrom
 import br.com.xp.operation.SubtractionOperation.Companion.subtractionValueFrom as subtraction
 

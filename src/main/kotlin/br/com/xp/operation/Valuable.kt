@@ -1,6 +1,6 @@
 package br.com.xp.operation
 
-interface Value {
+interface Valuable {
     val description: String
     val value: Double
 }

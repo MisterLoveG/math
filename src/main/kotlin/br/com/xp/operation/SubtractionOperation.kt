@@ -1,18 +1,18 @@
 package br.com.xp.operation
 
-import br.com.xp.operation.NumberValue.Companion.valueFrom
+import br.com.xp.operation.NumberValuable.Companion.valueFrom
 
-class SubtractionOperation private constructor( vararg values: Value) : Operation(*values) {
+class SubtractionOperation private constructor( vararg valuables: Valuable) : Operation(*valuables) {
     override val operator: String
         get() = "-"
 
     override val value: Double
-        get() = values.stream().mapToDouble { -it.value }.sum() + values[0].value * 2.0
+        get() = valuables.stream().mapToDouble { -it.value }.sum() + valuables[0].value * 2.0
 
     companion object {
 
-        fun subtractionValueFrom(vararg values: Value): Value {
-            return if(!values.isEmpty())SubtractionOperation(*values) else valueFrom(0.0)
+        fun subtractionValueFrom(vararg valuables: Valuable): Valuable {
+            return if(!valuables.isEmpty())SubtractionOperation(*valuables) else valueFrom(0.0)
         }
     }
 }

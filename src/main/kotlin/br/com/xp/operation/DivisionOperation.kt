@@ -1,23 +1,23 @@
 package br.com.xp.operation
 
- class DivisionOperation private constructor(vararg values:Value) : Operation(*values){
+ class DivisionOperation private constructor(vararg valuables: Valuable) : Operation(*valuables){
 
     override val operator: String
         get() = "\\"
 
     override val value: Double
         get() {
-            var result = values.get(0).value
-            for( i in 1 until values.size){
-                result/=values[i].value
+            var result = valuables.get(0).value
+            for( i in 1 until valuables.size){
+                result/= valuables[i].value
             }
             return result
         }
 
     companion object {
 
-        fun divisionValue(vararg values:Value):Value{
-           return if(!values.isEmpty()) DivisionOperation(*values) else NumberValue.ZERO
+        fun divisionValue(vararg valuables: Valuable): Valuable {
+           return if(!valuables.isEmpty()) DivisionOperation(*valuables) else NumberValuable.ZERO
        }
     }
 }

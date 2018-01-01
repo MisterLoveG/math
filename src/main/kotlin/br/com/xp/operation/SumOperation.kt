@@ -1,17 +1,17 @@
 package br.com.xp.operation
 
-class SumOperation  private constructor(vararg values: Value) : Operation(*values) {
+class SumOperation  private constructor(vararg valuables: Valuable) : Operation(*valuables) {
     override val operator: String
         get() = OPERATOR
 
     override val value: Double
-        get() = values.stream().mapToDouble { it.value }.sum()
+        get() = valuables.stream().mapToDouble { it.value }.sum()
 
     companion object {
         val OPERATOR ="+"
 
-        fun sumValueFrom(vararg values: Value): Value {
-            return if(!values.isEmpty()) SumOperation(*values) else NumberValue.ZERO
+        fun sumValueFrom(vararg valuables: Valuable): Valuable {
+            return if(!valuables.isEmpty()) SumOperation(*valuables) else NumberValuable.ZERO
         }
     }
 }
