@@ -10,7 +10,6 @@ class SubtractionOperation private constructor( vararg valuables: Valuable) : Op
         get() = valuables.stream().mapToDouble { -it.value }.sum() + valuables[0].value * 2.0
 
     companion object {
-
         fun subtractionValueFrom(vararg valuables: Valuable): Valuable {
             return if(!valuables.isEmpty())SubtractionOperation(*valuables) else valueFrom(0.0)
         }

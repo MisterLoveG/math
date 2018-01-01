@@ -9,7 +9,10 @@ class NumberValuable private constructor(override val value: Double) : Valuable 
         fun valueFrom(value: Double): NumberValuable {
             return NumberValuable(value)
         }
-
         val ZERO: NumberValuable = valueFrom(0.0)
+    }
+
+    override fun toString(): String {
+        return description
     }
 }

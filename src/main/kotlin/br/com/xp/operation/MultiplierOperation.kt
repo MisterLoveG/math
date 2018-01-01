@@ -1,6 +1,6 @@
 package br.com.xp.operation
 
-class MultiplerOperation private constructor(vararg valuables: Valuable): Operation(*valuables){
+class MultiplierOperation private constructor(vararg valuables: Valuable): Operation(*valuables){
 
     override val operator: String
         get() = "x"
@@ -10,7 +10,7 @@ class MultiplerOperation private constructor(vararg valuables: Valuable): Operat
     companion object {
 
         fun multiplerValue(vararg valuables: Valuable): Valuable {
-            return if(!valuables.isEmpty()) MultiplerOperation(*valuables) else NumberValuable.ZERO
+            return if(!valuables.isEmpty()) MultiplierOperation(*valuables) else NumberValuable.ZERO
         }
 
     }
