@@ -1,0 +1,3 @@
+rootProject.name = 'math'
+rootProject.buildFileName = 'build.gradle.kts'
+
