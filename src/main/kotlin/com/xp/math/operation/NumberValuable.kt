@@ -9,6 +9,9 @@ class NumberValuable private constructor(override val value: Double) : Valuable 
         fun valueFrom(value: Double): NumberValuable {
             return NumberValuable(value)
         }
+        fun valueFrom(value: Int): NumberValuable {
+            return NumberValuable(value.toDouble())
+        }
         val ZERO: NumberValuable = valueFrom(0.0)
     }
 
