@@ -1,17 +1,16 @@
 package br.com.xp.operation
 
-import java.util.*
+import com.xp.math.operation.RandomNumberFactory.generateNumber
 
 object RandomValueFactory {
-    private val random = Random()
 
-    fun createRandomRealValue(min: Double, max: Double): Valuable {
-        val randomNumber = (random.nextDouble() * (max - min)) + min
+    fun createRandomValue(min: Double, max: Double): Valuable {
+        val randomNumber = generateNumber(min,max)
         return NumberValuable.valueFrom(randomNumber)
     }
 
-    fun createRandomIntegerValue(min: Int, max: Int): Valuable {
-        val randomNumber = (Math.abs(random.nextInt(max-min) )) + min
+    fun createRandomValue(min: Int, max: Int): Valuable {
+        val randomNumber = generateNumber(min,max)
         return NumberValuable.valueFrom(randomNumber)
     }
 }
