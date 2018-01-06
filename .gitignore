@@ -11,7 +11,7 @@
 .springBeans
 
 ### IntelliJ IDEA ###
-.idea
+back-end/.idea
 *.iws
 *.iml
 *.ipr
@@ -25,3 +25,5 @@ nbdist/
 .nb-gradle/
 out
 gradle
+/front-end/.idea/vcs.xml
+/front-end/.idea/misc.xml
