@@ -1,5 +1,6 @@
 package index
 
+import jQuery
 import kotlinext.js.*
 import react.RBuilder
 import react.RComponent
@@ -13,4 +14,5 @@ fun main(args: Array<String>) {
     render(document.getElementById("root")) {
         welcome("Rafael")
     }
+    
 }
