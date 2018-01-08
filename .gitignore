@@ -27,3 +27,5 @@ out
 gradle
 /front-end/.idea/vcs.xml
 /front-end/.idea/misc.xml
+.idea
+node_modules
