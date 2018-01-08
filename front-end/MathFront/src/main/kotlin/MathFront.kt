@@ -1,5 +1,5 @@
 
-import react.dom.h2
+import operation.equation
 import react.dom.render
 import kotlin.browser.document
 import kotlin.browser.window
@@ -7,7 +7,7 @@ import kotlin.browser.window
 
 fun main(args: Array<String>) {
     render(document.getElementById("content")) {
-        h2 { +"Hola mundo" }
+        equation()
     }
     jQuery("h2").hover { window.alert("Tocou em mim hehehe") }
 }
