@@ -13,7 +13,7 @@ interface OperationProp:RProps{
 
 class OperationComponent(val prop:OperationProp):RComponent<OperationProp, RState>(){
     override fun RBuilder.render() {
-        div {
+        div("alert alert-primary") {
             +"Hello, ${prop.equation}"
         }
     }

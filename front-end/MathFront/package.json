@@ -1,14 +1,18 @@
 {
   "dependencies": {
-    "webpack": "3.4.1",
-    "source-map-loader": "0.2.1",
-    "webpack-merge": "4.1.0",
+    "bootstrap": "^4.0.0-beta.3",
+    "css-loader": "^0.28.8",
+    "jquery": "2.1.0",
+    "node-watch": "0.5.5",
+    "popper.js": "^1.12.9",
     "react": "15.6.1",
     "react-dom": "15.6.1",
     "react-router-dom": "4.2.2",
-    "websocket": "1.0.24",
-    "node-watch": "0.5.5",
-    "jquery": "2.1.0"
+    "source-map-loader": "0.2.1",
+    "style-loader": "^0.19.1",
+    "webpack": "3.4.1",
+    "webpack-merge": "4.1.0",
+    "websocket": "1.0.24"
   },
   "devDependencies": {
     "webpack-dev-server": "2.8.2",

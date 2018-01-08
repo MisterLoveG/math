@@ -1,7 +1,7 @@
 var path = require("path");
 
 module.exports = {
-    entry: path.resolve(__dirname, "build/classes/kotlin/main/MathFront.js"),
+    entry: path.resolve(__dirname, "src/main/js/index.js"),
     output: {
         path: path.resolve(__dirname, "build/web"),
         filename: "bundle.js"
@@ -15,6 +15,10 @@ module.exports = {
                 test: /\.js$/,
                 use: ["source-map-loader"],
                 enforce: "pre"
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             }
         ]
     }
