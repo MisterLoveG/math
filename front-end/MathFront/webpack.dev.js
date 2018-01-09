@@ -11,7 +11,14 @@ module.exports = merge(require("./webpack.common.js"), {
     devServer: {
         contentBase: "./src/main/web/",
         port: 9000,
-        hot: true
+        hot: true,
+        proxy: [
+            {
+                context: [ "/api"],
+                target: "http://localhost:8810",
+                ws: true
+            }
+        ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),

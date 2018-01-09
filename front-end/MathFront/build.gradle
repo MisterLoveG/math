@@ -19,12 +19,6 @@ version '1.0-SNAPSHOT'
 
 
 apply plugin: 'kotlin2js'
-compileKotlin2Js{
-    kotlinOptions.metaInfo = true
-    kotlinOptions.sourceMap = true
-    kotlinOptions.moduleKind = 'commonjs'
-}
-
 apply plugin: "com.moowork.node"
 node {
     download = true
@@ -70,7 +64,12 @@ task copyKotlinJs(type: Copy, dependsOn: compileKotlin2Js) {
     }
     into "$workDir/dependencies"
 }
-
+compileKotlin2Js {
+    kotlinOptions.sourceMap = true
+    kotlinOptions.sourceMapEmbedSources = "always"
+    kotlinOptions.moduleKind = 'commonjs'
+    kotlinOptions.metaInfo = true
+}
 task devBuild(dependsOn: [npmInstall, copyStatic, copyKotlinJs])
 
 assemble.dependsOn buildBundle, copyStatic
