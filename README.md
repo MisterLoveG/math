@@ -1,14 +1,14 @@
 # math
 Test kotlin js and kotlin with spring
 
-Kotlin Js uses:
-React
-Jquery
-Bootstrap
+## Kotlin Js uses:
+React</br>
+Jquery</br>
+Bootstrap</br>
 
 
-Kotlin server side uses:
+## Kotlin server side uses:
 Spring boot
 
 
-This was created to test kotlin in both front side and back side. It was made from a noob of this language so if you have any ideia of how to improve this project you're welcome
+It was created to test kotlin with both front side and back side. It was made from a noob so if you have any ideia how to improve this project you're welcome
