@@ -4,8 +4,7 @@ import com.xp.math.extensions.roundWith2Decimal
 
 class DivisionOperation private constructor(vararg valuables: Valuable) : Operation(*valuables) {
 
-    override val operator: String
-        get() = "\\"
+    override val operator = "\\"
 
     override val value: Double
         get() {

@@ -4,8 +4,7 @@ import com.xp.math.extensions.roundWith2Decimal
 
 class NumberValuable private constructor(override val value: Double) : Valuable {
 
-    override val description: String
-        get() = value.roundWith2Decimal().toString()
+    override val description = value.roundWith2Decimal().toString()
 
     companion object {
         fun valueFrom(value: Double): NumberValuable {

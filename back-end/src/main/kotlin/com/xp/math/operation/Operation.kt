@@ -2,9 +2,9 @@ package com.xp.math.operation
 
 
 abstract class Operation(vararg valuables: Valuable) : Valuable {
-    internal var valuables: List<Valuable>
+    protected var valuables: List<Valuable>
 
-    internal abstract val operator: String
+    protected  abstract val operator: String
 
     init {
         assert(valuables.size >= 2) { "incorrect input" }
