@@ -1,4 +1,4 @@
-package br.com.xp.operation
+package com.xp.math.operation
 
 import com.xp.math.operation.RandomNumberFactory.generateNumber
 

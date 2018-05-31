@@ -1,6 +1,5 @@
 package com.xp.math.operation
 
-import br.com.xp.operation.RandomValueFactory
 import org.junit.Assert.assertTrue
 import org.junit.Test
 class RandomValueFactoryTest {

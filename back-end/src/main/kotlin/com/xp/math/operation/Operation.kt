@@ -1,4 +1,4 @@
-package br.com.xp.operation
+package com.xp.math.operation
 
 
 abstract class Operation(vararg valuables: Valuable) : Valuable {
@@ -7,7 +7,7 @@ abstract class Operation(vararg valuables: Valuable) : Valuable {
     internal abstract val operator: String
 
     init {
-        assert(valuables.size > 2) { "incorrect input" }
+        assert(valuables.size >= 2) { "incorrect input" }
         this.valuables = valuables.toList()
     }
 

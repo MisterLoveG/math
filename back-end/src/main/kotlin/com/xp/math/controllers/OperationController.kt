@@ -1,7 +1,7 @@
 package com.xp.math.controllers
 
-import br.com.xp.operation.Valuable
 import com.xp.math.operation.OperationFactory
+import com.xp.math.operation.Valuable
 import org.springframework.cache.annotation.Cacheable
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam

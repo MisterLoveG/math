@@ -1,4 +1,6 @@
-package br.com.xp.operation
+package com.xp.math.operation
+
+import com.xp.math.extensions.roundWith2Decimal
 
 class DivisionOperation private constructor(vararg valuables: Valuable) : Operation(*valuables) {
 
@@ -11,7 +13,7 @@ class DivisionOperation private constructor(vararg valuables: Valuable) : Operat
             for (i in 1 until valuables.size) {
                 result /= valuables[i].value
             }
-            return result
+            return result.roundWith2Decimal()
         }
 
     companion object {

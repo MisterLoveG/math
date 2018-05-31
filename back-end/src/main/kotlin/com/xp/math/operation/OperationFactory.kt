@@ -1,9 +1,6 @@
 package com.xp.math.operation
 
-import br.com.xp.operation.RandomValueFactory.createRandomValue
-import br.com.xp.operation.SubtractionOperation
-import br.com.xp.operation.SumOperation
-import br.com.xp.operation.Valuable
+import com.xp.math.operation.RandomValueFactory.createRandomValue
 import java.util.*
 import java.util.function.BiFunction
 
@@ -28,22 +25,32 @@ class OperationFactory private constructor(val min: Int, val max: Int, val equat
     }
 
 
-    class Build {
-        private val operationFactory: OperationFactory
+    class Builder (min: Int, max: Int, equations: Int){
+        private val operationFactory: OperationFactory = OperationFactory(min, max, equations)
 
-        constructor(min: Int, max: Int, equations: Int) {
-            operationFactory = OperationFactory(min, max, equations)
-        }
-
-        fun addSum(): Build {
+        fun addSum(): Builder {
             operationFactory.operationsCreator.add(
                     BiFunction { value1, value2 -> SumOperation.sumValueFrom(value1, value2) })
             return this
         }
 
-        fun addSubtraction(): Build {
+        fun addSubtraction(): Builder {
             operationFactory.operationsCreator.add(
                     BiFunction { value1, value2 -> SubtractionOperation.subtractionValueFrom(value1, value2) })
+            return this
+        }
+
+        fun addMultipler(): Builder {
+            operationFactory
+                    .operationsCreator
+                    .add(BiFunction { value1, value2 -> MultiplierOperation.multiplerValue(value1, value2) })
+            return this
+        }
+
+        fun addDivision(): Builder {
+            operationFactory
+                    .operationsCreator
+                    .add(BiFunction { value1, value2 -> DivisionOperation.divisionValue(value1, value2) })
             return this
         }
 

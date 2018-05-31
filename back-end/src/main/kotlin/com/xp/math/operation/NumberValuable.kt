@@ -1,9 +1,11 @@
-package br.com.xp.operation
+package com.xp.math.operation
+
+import com.xp.math.extensions.roundWith2Decimal
 
 class NumberValuable private constructor(override val value: Double) : Valuable {
 
     override val description: String
-        get() = value.toString()
+        get() = value.roundWith2Decimal().toString()
 
     companion object {
         fun valueFrom(value: Double): NumberValuable {
