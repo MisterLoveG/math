@@ -61,6 +61,13 @@ class OperationFactory private constructor(val min: Int, val max: Int, val equat
             return this
         }
 
+        fun addRoot():Builder{
+            operationFactory
+                    .operationsCreator
+                    .add(BiFunction { value1, value2 -> RootOperation.powValue(value1,value2) })
+            return this
+        }
+
         fun build(): OperationFactory {
             return operationFactory
         }
