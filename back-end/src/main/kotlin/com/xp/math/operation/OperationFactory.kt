@@ -25,7 +25,7 @@ class OperationFactory private constructor(val min: Int, val max: Int, val equat
     }
 
 
-    class Builder (min: Int, max: Int, equations: Int){
+    class Builder(min: Int, max: Int, equations: Int) {
         private val operationFactory: OperationFactory = OperationFactory(min, max, equations)
 
         fun addSum(): Builder {
@@ -51,6 +51,13 @@ class OperationFactory private constructor(val min: Int, val max: Int, val equat
             operationFactory
                     .operationsCreator
                     .add(BiFunction { value1, value2 -> DivisionOperation.divisionValue(value1, value2) })
+            return this
+        }
+
+        fun addPow(): Builder {
+            operationFactory
+                    .operationsCreator
+                    .add(BiFunction { value1, value2 -> PowOperation.powValue(value1, value2) })
             return this
         }
 
