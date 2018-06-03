@@ -26,6 +26,7 @@ class OperationController {
             .addSum()
             .addDivision()
             .addMultipler()
+            .addPow()
             .build()
             .generateOperations()
 }
