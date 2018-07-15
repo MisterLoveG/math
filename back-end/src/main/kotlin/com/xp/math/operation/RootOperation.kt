@@ -11,7 +11,8 @@ class RootOperation private constructor(vararg valuables: Valuable) : Operation(
     override val value: Double
         get() {
             val index = 1 / valuables[0].value
-            return valuables.stream().mapToDouble { it.value }.reduce { all, base -> all + Math.pow(base, index)  }.asDouble.roundWith2Decimal()
+            val baseList = valuables.subList(1, valuables.size)
+            return baseList.stream().mapToDouble { it.value }.reduce { all, base -> all + Math.pow(base, index)  }.asDouble.roundWith2Decimal()
         }
 
 
