@@ -22,7 +22,6 @@ dist/
 nbdist/
 .nb-gradle/
 out
-gradle
 /front-end/.idea/vcs.xml
 /front-end/.idea/misc.xml
 .idea
