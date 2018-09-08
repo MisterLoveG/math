@@ -1,8 +1,8 @@
+
 buildscript {
-	ext {
-		kotlinVersion = '1.2.51'
-		springBootVersion = '2.0.0.M7'
-	}
+	//dependecy versions file
+	apply from: 'versions.gradle'
+
 	repositories {
 		mavenCentral()
 		maven { url "https://repo.spring.io/snapshot" }
@@ -51,8 +51,9 @@ dependencies {
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version:kotlinVersion
 	compile("org.jetbrains.kotlin:kotlin-reflect")
-	compile "io.springfox:springfox-swagger2:2.9.0"
-	compile("org.springframework.boot:spring-boot-starter-cache")
+	compile ("io.springfox:springfox-swagger2:$swaggerVersion")
+	compile ("io.springfox:springfox-swagger-ui:$swaggerVersion")
+	compile ("org.springframework.boot:spring-boot-starter-cache")
 	runtime('com.h2database:h2')
 	runtime('org.postgresql:postgresql')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
