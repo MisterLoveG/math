@@ -10,7 +10,7 @@ enum class OperationFunction(val function:BiFunction<Valuable, Valuable, Valuabl
 
     DIVISION(BiFunction { value1, value2 -> DivisionOperation.divisionValue(value1, value2) }),
 
-    MULTIPLIER(BiFunction { value1, value2 -> MultiplierOperation.multiplerValue(value1, value2) }),
+    MULTIPLIER(BiFunction { value1, value2 -> MultiplierOperation.multiplierValue(value1, value2) }),
 
     POW(BiFunction { value1, value2 -> PowOperation.powValue(value1, value2) });
 }

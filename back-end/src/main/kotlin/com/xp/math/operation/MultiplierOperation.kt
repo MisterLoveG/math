@@ -11,7 +11,7 @@ class MultiplierOperation private constructor(vararg valuables: Valuable): Opera
 
     companion object {
 
-        fun multiplerValue(vararg valuables: Valuable): Valuable {
+        fun multiplierValue(vararg valuables: Valuable): Valuable {
             return if(!valuables.isEmpty()) MultiplierOperation(*valuables) else NumberValuable.ZERO
         }
 

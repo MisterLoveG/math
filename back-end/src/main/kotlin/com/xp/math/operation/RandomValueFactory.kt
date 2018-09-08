@@ -1,16 +1,11 @@
 package com.xp.math.operation
 
-import com.xp.math.operation.RandomNumberFactory.generateNumber
+fun createRandomValue(min: Double, max: Double): Valuable {
+    val randomNumber = generateNumber(min, max)
+    return NumberValuable.valueFrom(randomNumber)
+}
 
-object RandomValueFactory {
-
-    fun createRandomValue(min: Double, max: Double): Valuable {
-        val randomNumber = generateNumber(min,max)
-        return NumberValuable.valueFrom(randomNumber)
-    }
-
-    fun createRandomValue(min: Int, max: Int): Valuable {
-        val randomNumber = generateNumber(min,max)
-        return NumberValuable.valueFrom(randomNumber)
-    }
+fun createRandomValue(min: Int, max: Int): Valuable {
+    val randomNumber = generateNumber(min, max)
+    return NumberValuable.valueFrom(randomNumber)
 }

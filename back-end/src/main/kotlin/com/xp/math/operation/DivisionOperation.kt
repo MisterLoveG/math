@@ -8,7 +8,7 @@ class DivisionOperation private constructor(vararg valuables: Valuable) : Operat
 
     override val value: Double
         get() {
-            var result = valuables.get(0).value
+            var result = valuables[0].value
             for (i in 1 until valuables.size) {
                 result /= valuables[i].value
             }

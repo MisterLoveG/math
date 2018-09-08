@@ -9,7 +9,7 @@ class SumOperationTest {
 
     @Test
     fun shouldSum() {
-        val sumedValue = sumValueFrom(valueFrom(10), valueFrom(1))
-        assertEquals(sumedValue.value, 11.0, 0.0)
+        val summedValue = sumValueFrom(valueFrom(10), valueFrom(1))
+        assertEquals(summedValue.value, 11.0, 0.0)
     }
 }

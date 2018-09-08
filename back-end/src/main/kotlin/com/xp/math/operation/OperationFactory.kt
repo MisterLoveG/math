@@ -1,13 +1,11 @@
 package com.xp.math.operation
 
-import com.xp.math.operation.RandomValueFactory.createRandomValue
-import java.util.*
 import java.util.function.BiFunction
 
-class OperationFactory constructor(val min: Int,
-                                   val max: Int,
-                                   val equations: Int,
-                                   val operationTypes:List<BiFunction<Valuable, Valuable, Valuable>>) {
+class OperationFactory constructor(private val min: Int,
+                                   private val max: Int,
+                                   private val equations: Int,
+                                   private val operationTypes:List<BiFunction<Valuable, Valuable, Valuable>>) {
 
 
     fun generateOperations(): ArrayList<Valuable> {
@@ -22,7 +20,12 @@ class OperationFactory constructor(val min: Int,
     private fun createOperation(): Valuable {
         val value1 = createRandomValue(min, max)
         val value2 = createRandomValue(min, max)
-        val operationSelector = RandomNumberFactory.generateNumber(0, operationTypes.size)
-        return operationTypes.get(operationSelector).apply(value1, value2)
+        val operationFunction = selectOperationFunction()
+        return operationFunction.apply(value1, value2)
+    }
+
+    private fun selectOperationFunction(): BiFunction<Valuable, Valuable, Valuable> {
+        val operationSelector = generateNumber(0, operationTypes.size)
+        return operationTypes[operationSelector]
     }
 }
