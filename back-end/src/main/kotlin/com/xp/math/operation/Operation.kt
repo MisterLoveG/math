@@ -1,23 +1,14 @@
 package com.xp.math.operation
 
 
-abstract class Operation(vararg valuables: Valuable) : Valuable {
-    protected var valuables: List<Valuable>
-
+abstract class Operation(protected var valuable1: Valuable, protected var valuable2: Valuable) : Valuable {
     protected  abstract val operator: String
 
-    init {
-        assert(valuables.size >= 2) { "incorrect input" }
-        this.valuables = valuables.toList()
-    }
-
-    override val description: String by lazy {
-        val firstValue = valuables[0]
-        var description = "(" + firstValue.description
-        for (i in 1 until valuables.size) {
-            description+=operator + valuables[i].value
-        }
-        description+=")"
-        description
-    }
+    override val description= StringBuilder()
+                .append("(")
+                .append(valuable1.description)
+                .append(operator)
+                .append(valuable2.description)
+                .append(")")
+                .toString()
 }

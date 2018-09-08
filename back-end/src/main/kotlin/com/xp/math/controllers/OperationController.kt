@@ -17,7 +17,7 @@ class OperationController {
 
     @GetMapping(value = ["/operation"], produces = [APPLICATION_JSON_VALUE])
     @Cacheable("equation")
-    fun getAllOperations(
+    fun getOperationsByType(
             @RequestParam("min") min: Int ,
             @RequestParam("max") max: Int,
             @RequestParam("equations") @Min(1) @Max(100) counts: Int,

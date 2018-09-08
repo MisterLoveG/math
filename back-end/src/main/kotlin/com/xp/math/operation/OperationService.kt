@@ -1,7 +1,7 @@
 package com.xp.math.operation
 
-import java.util.function.BiFunction
 import java.util.stream.Collectors
+
 
 private val DEFAULT_OPERATIONS_TYPES = OperationFunction.values().toList()
 fun createOperation(min: Int,
@@ -14,8 +14,8 @@ fun createOperation(min: Int,
     return operationFactory.generateOperations()
 }
 
-private fun getOperationFunctions(equationTypes: List<OperationFunction>): List<BiFunction<Valuable, Valuable, Valuable>>{
-    return equationTypes
+private fun getOperationFunctions(equationTypes: List<OperationFunction>): List<(Valuable, Valuable) -> Valuable> {
+    return  equationTypes
             .stream()
             .map(OperationFunction::function)
             .collect(Collectors.toList())

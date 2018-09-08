@@ -1,16 +1,12 @@
 package com.xp.math.operation
 
-import com.xp.math.extensions.roundWith2Decimal
-
-class SumOperation  private constructor(vararg valuables: Valuable) : Operation(*valuables) {
+class SumOperation  constructor(value1: Valuable, value2: Valuable) : Operation(value1, value2 ) {
     override val operator = "+"
 
     override val value: Double
-        get() = valuables.stream().mapToDouble { it.value }.sum().roundWith2Decimal()
+        get() = valuable1.value+ valuable2.value
 
-    companion object {
-        fun sumValueFrom(vararg valuables: Valuable): Valuable {
-            return if(!valuables.isEmpty()) SumOperation(*valuables) else NumberValuable.ZERO
-        }
+    fun sumValueFrom(value1: Valuable, value2: Valuable): Valuable {
+        return SumOperation(value1, value2)
     }
 }
